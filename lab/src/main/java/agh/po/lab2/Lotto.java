@@ -5,23 +5,34 @@ import java.util.Random;
 
 public class Lotto {
     public static void main(String[] args) {
+        ArrayList<Integer> typy = new ArrayList<Integer>();
+        ArrayList<Integer> liczby = new ArrayList<Integer>();
 
-        ArrayList<Integer> typy = new ArrayList<>();
-        Random rand = new Random();
+        Random random = new Random();
 
-        int ile_liczb = 1;
-
-        int liczba = rand.nextInt(48);
-        liczba +=1;
-        typy.add(liczba);
-
-        while (ile_liczb<6)
-        {
-
-
+        for (int i = 0; i < args.length; i++) {
+            int typ = Integer.parseInt(args[i]);
+            typy.add(typ);
         }
 
+        while (liczby.size() < 6) {
+            int liczba = random.nextInt(49) + 1;
 
+            if (!liczby.contains(liczba)) {
+                liczby.add(liczba);
+            }
+        }
 
+        int trafienia = 0;
+
+        for (int i = 0; i < liczby.size(); i++) {
+            if (typy.contains(liczby.get(i))) {
+                trafienia++;
+            }
+        }
+
+        System.out.println("Twoje typy: " + typy);
+        System.out.println("Wylosowane liczby: " + liczby);
+        System.out.println("Liczba trafień: " + trafienia);
     }
 }
