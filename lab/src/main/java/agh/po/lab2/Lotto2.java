@@ -1,3 +1,5 @@
+package agh.po.lab2;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -24,15 +26,22 @@ public class Lotto2 {
             }
             losowania++;
             trafienia = 0;
+            /*
             for (int i = 0; i < liczby.size(); i++) {
                 if (typy.contains(liczby.get(i))) {
                     trafienia++;
                 }
             }
+            */
+            liczby.retainAll(typy);
+            if(liczby.size()==6)
+                trafienia = 6;
         }
         long koniec = System.currentTimeMillis();
         long czas = koniec - start;
         System.out.println("Liczba losowań: " + losowania);
         System.out.println("Czas działania: " + czas + " ms");
+        long parametr = losowania/czas;
+        System.out.println("parametr = "+parametr);
     }
 }
