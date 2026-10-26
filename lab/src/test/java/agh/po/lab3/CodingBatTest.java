@@ -27,4 +27,14 @@ public class CodingBatTest {
         assertEquals(true,codingBat.lucky13(new int[] {2, 2, 4, 5}));
     }
 
+    @Test
+    public void left2(){
+//        assertEquals(true,codingBat.lucky13("Hello"));
+//        assertEquals(true,codingBat.lucky13("World"));
+//        assertEquals(true,codingBat.lucky13("Apple"));
+//        assertEquals(true,codingBat.lucky13("Orange"));
+//        assertEquals(true,codingBat.lucky13("Light"));
+        assertEquals(true,codingBat.lucky13("Button"));
+    }
+
 }
