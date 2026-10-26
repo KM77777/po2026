@@ -30,7 +30,7 @@ public class CodingBat {
 
         System.out.println("wynik "+codingBat.lucky13(new int[]{2,2,3,4,2}));
 
-        System.out.println("wynik "+codingBat.left2("Hello"));
+        System.out.println("wynik "+codingBat.left2("Hello")); 
 
 
     }
