@@ -17,6 +17,10 @@ public class CodingBat {
         return true;
     }
 
+    public String left2(String str) {
+        return str.substring(2) + str.substring(0, 2);
+    }
+
 
     public static void  main(String[] args){
         CodingBat codingBat = new CodingBat();
@@ -25,6 +29,8 @@ public class CodingBat {
         System.out.println("wynik "+codingBat.array123(new int[]{2,2,3,4,2}));
 
         System.out.println("wynik "+codingBat.lucky13(new int[]{2,2,3,4,2}));
+
+        System.out.println("wynik "+codingBat.left2("Hello"));
 
 
     }
