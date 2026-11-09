@@ -1,4 +1,7 @@
 package agh.po.lab3;
+import java.util.Map;
+import java.util.HashMap;
+
 
 public class CodingBat {
     public boolean array123(int[] nums) {
@@ -20,6 +23,25 @@ public class CodingBat {
     public String left2(String str) {
         return str.substring(2) + str.substring(0, 2);
     }
+
+
+    public Map<String, String> mapAB4(Map<String, String> map) {
+        if (map.containsKey("a") && map.containsKey("b")) {
+            String a = map.get("a");
+            String b = map.get("b");
+
+            if (a.length() > b.length()) {
+                map.put("c", a);
+            } else if (b.length() > a.length()) {
+                map.put("c", b);
+            } else {
+                map.put("a", "");
+                map.put("b", "");
+            }
+        }
+        return map;
+    }
+
 
 
     public static void  main(String[] args){
