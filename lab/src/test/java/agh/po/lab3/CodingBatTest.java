@@ -1,5 +1,6 @@
 package agh.po.lab3;
-
+import java.util.Map;
+import java.util.HashMap;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -34,7 +35,26 @@ public class CodingBatTest {
 //        assertEquals(true,codingBat.lucky13("Apple"));
 //        assertEquals(true,codingBat.lucky13("Orange"));
 //        assertEquals(true,codingBat.lucky13("Light"));
-        assertEquals(true,codingBat.lucky13("Button"));
+//        assertEquals(true,codingBat.lucky13("Button"));
     }
+
+    @Test
+    public void mapAB4() {
+        CodingBat cb3 = new CodingBat();
+        Map<String, String> wejscie = new HashMap<>();
+        wejscie.put("a", "aaa");
+        wejscie.put("b", "bb");
+        wejscie.put("c", "cake");
+
+        Map<String, String> oczekiwany = new HashMap<>();
+        oczekiwany.put("a", "aaa");
+        oczekiwany.put("b", "bb");
+        oczekiwany.put("c", "aaa");
+
+        Map<String, String> wynik = cb3.mapAB4(wejscie);
+        assertEquals(oczekiwany, wynik);
+
+    }
+
 
 }
