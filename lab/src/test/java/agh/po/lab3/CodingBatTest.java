@@ -56,5 +56,16 @@ public class CodingBatTest {
 
     }
 
+    @Test
+    public void pairs() {
+        CodingBat cb4 = new CodingBat();
+        String[] wejscie = {"code", "bug"};
+
+        assertEquals(
+                Map.of("c", "e", "b", "g"),
+                cb4.pairs(wejscie)
+        );
+    }
+
 
 }
