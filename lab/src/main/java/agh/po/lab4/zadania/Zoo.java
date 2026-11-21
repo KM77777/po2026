@@ -8,29 +8,58 @@ import agh.po.lab4.animals.Snake;
 import java.util.Random;
 
 public class Zoo {
-    Animal[]animals = new Animal[100];
-    public void fillAnimals(){
-        Random rand = new Random();
-        for(int i = 0;i< animals.length;i++){
-            int wybor = rand.nextInt(3);
-            int dlugoscImienia = rand.nextInt(9) +3;
 
+    Animal[] zwierzeta = new Animal[100];
 
-            if(wybor==0){
-                animals[i] = new Dog(imie);
-            } else if (wybor == 1) {
-                animals[i] = new Parrot(imie);
+    public void fillAnimals() {
+        Random losowanie = new Random();
+        String alfabetImion = "qwertyuiopasdfghjklzxcvbnm";
 
-            } else if (wybor == 2) {
-                animals[i] = new Snake(imie);
+        for (int indeksZwierzecia = 0; indeksZwierzecia < zwierzeta.length; indeksZwierzecia++) {
+            int numerGatunku = losowanie.nextInt(3);
+            int dlugoscLosowegoImienia = losowanie.nextInt(8) + 1;
+            String tworzoneImie = "";
 
+            for (int numerZnaku = 0; numerZnaku < dlugoscLosowegoImienia; numerZnaku++) {
+                int pozycjaWAlfabecie = losowanie.nextInt(alfabetImion.length());
+                char znakImienia = alfabetImion.charAt(pozycjaWAlfabecie);
+                tworzoneImie = tworzoneImie + znakImienia;
+            }
+
+            if (numerGatunku == 0) {
+                zwierzeta[indeksZwierzecia] = new Dog(tworzoneImie);
+            } else if (numerGatunku == 1) {
+                zwierzeta[indeksZwierzecia] = new Parrot(tworzoneImie);
+            } else {
+                zwierzeta[indeksZwierzecia] = new Snake(tworzoneImie);
             }
         }
     }
 
+    public int countLegs() {
+        int lacznaLiczbaNog = 0;
 
-}
+        for (Animal zwierze : zwierzeta) {
+            int liczbaNogZwierzecia = zwierze.getLegs();
+            lacznaLiczbaNog = lacznaLiczbaNog + liczbaNogZwierzecia;
+        }
 
-public class main(){
-    public static void main(String[] args) {}
+        return lacznaLiczbaNog;
+    }
+
+    public void showAnimals() {
+        for (int indeksZwierzecia = 0; indeksZwierzecia < zwierzeta.length; indeksZwierzecia++) {
+            System.out.println((indeksZwierzecia + 1) + ". " + zwierzeta[indeksZwierzecia].getDescription());
+            zwierzeta[indeksZwierzecia].makeSound();
+        }
+    }
+
+    public static void main(String[] argumentyProgramu) {
+        Zoo ogrodZoologiczny = new Zoo();
+        ogrodZoologiczny.fillAnimals();
+        ogrodZoologiczny.showAnimals();
+
+        int lacznaLiczbaNog = ogrodZoologiczny.countLegs();
+        System.out.println("Łączna liczba nóg: " + lacznaLiczbaNog);
+    }
 }
