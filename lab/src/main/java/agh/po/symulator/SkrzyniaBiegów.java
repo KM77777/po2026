@@ -26,4 +26,8 @@ public class SkrzyniaBiegów extends Komponent {
             aktualnyBieg = nowyBieg;
         }
     }
+
+    public int getAktualnyBieg() {
+        return aktualnyBieg;
+    }
 }
