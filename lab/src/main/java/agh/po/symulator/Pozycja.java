@@ -1,3 +1,4 @@
+
 package agh.po.symulator;
 
 public class Pozycja {
@@ -13,8 +14,8 @@ public class Pozycja {
     }
 
     public void aktualizujPozycję(double deltaX, double deltaY) {
-        x = deltaX+y;
-        y = deltaY+y;
+        x = x + deltaX;
+        y = y + deltaY;
     }
 
     public String getPozycja() {
