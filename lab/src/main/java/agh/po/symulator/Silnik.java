@@ -16,4 +16,8 @@ public class Silnik extends Komponent {
     public void zatrzymaj() {
         obroty = 0;
     }
+
+    public int getObroty() {
+        return obroty;
+    }
 }
